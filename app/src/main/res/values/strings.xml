@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ContactApp</string>
+    <string name="permission_not_granted">You need to grant permission</string>
+</resources>
