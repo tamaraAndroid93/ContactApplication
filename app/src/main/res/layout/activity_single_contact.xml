@@ -7,6 +7,8 @@
     android:layout_height="match_parent">
 
     <ImageView
+        android:contentDescription="Contact image"
+        android:focusable="true"
         android:id="@+id/imageViewPhoto"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -19,6 +21,7 @@
         android:background="@color/colorPrimary"/>
 
     <TextView
+        android:contentDescription="Contact name"
         android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,6 +37,7 @@
         android:textSize="14dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textViewName"/>
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        android:contentDescription="phone number"/>
 
 </android.support.constraint.ConstraintLayout>

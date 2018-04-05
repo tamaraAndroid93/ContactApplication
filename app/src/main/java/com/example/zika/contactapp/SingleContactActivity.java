@@ -13,26 +13,19 @@ public class SingleContactActivity extends AppCompatActivity {
     private TextView mName;
     private TextView mPhone;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_contact);
 
         Intent intent = getIntent();
-
         int position = intent.getIntExtra("item_position", 0);
 
         initComponent();
-
         loadData(position);
     }
 
     private void loadData(int position) {
-
-
-
         Picasso.with(getApplicationContext())
                 .load(MainActivity.mList.get(position).photoURI)
                 .into(mPhoto);
@@ -40,6 +33,8 @@ public class SingleContactActivity extends AppCompatActivity {
         mPhone.setText(MainActivity.mList.get(position).phone);
         mName.setText(MainActivity.mList.get(position).name);
 
+        mPhone.setContentDescription(MainActivity.mList.get(position).phone);
+        mName.setContentDescription(MainActivity.mList.get(position).name);
     }
 
     private void initComponent() {
@@ -47,7 +42,5 @@ public class SingleContactActivity extends AppCompatActivity {
         mPhone = findViewById(R.id.textViewPhone);
         mPhoto = findViewById(R.id.imageViewPhoto);
         mName = findViewById(R.id.textViewName);
-
     }
-
 }
