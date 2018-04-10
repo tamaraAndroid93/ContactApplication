@@ -12,6 +12,7 @@ public class SingleContactActivity extends AppCompatActivity {
     private ImageView mPhoto;
     private TextView mName;
     private TextView mPhone;
+    private ContactPeople item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,22 +20,23 @@ public class SingleContactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_single_contact);
 
         Intent intent = getIntent();
-        int position = intent.getIntExtra("item_position", 0);
+        item = (ContactPeople) intent.getSerializableExtra("item");
+
 
         initComponent();
-        loadData(position);
+        loadData(item);
     }
 
-    private void loadData(int position) {
+    private void loadData(ContactPeople item) {
         Picasso.with(getApplicationContext())
-                .load(MainActivity.mList.get(position).photoURI)
+                .load(item.photoURI)
                 .into(mPhoto);
 
-        mPhone.setText(MainActivity.mList.get(position).phone);
-        mName.setText(MainActivity.mList.get(position).name);
+        mPhone.setText(item.phone);
+        mName.setText(item.name);
 
-        mPhone.setContentDescription(MainActivity.mList.get(position).phone);
-        mName.setContentDescription(MainActivity.mList.get(position).name);
+        mPhone.setContentDescription(item.phone);
+        mName.setContentDescription(item.name);
     }
 
     private void initComponent() {

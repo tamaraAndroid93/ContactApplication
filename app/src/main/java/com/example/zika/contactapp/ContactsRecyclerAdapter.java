@@ -33,7 +33,7 @@ public class ContactsRecyclerAdapter extends RecyclerView.Adapter<ContactsRecycl
 
     @Override
     public void onBindViewHolder(final ContactViewHolder holder, final int position) {
-        ContactPeople item = mList.get(position);
+        final ContactPeople item = mList.get(position);
         holder.txtDisplay.setText(item.name);
         holder.txtDisplay.setContentDescription(item.name);
 
@@ -44,7 +44,7 @@ public class ContactsRecyclerAdapter extends RecyclerView.Adapter<ContactsRecycl
             public void onClick(View view) {
 
                 Intent intent = new Intent(mContext, SingleContactActivity.class);
-                intent.putExtra("item_position", position);
+                intent.putExtra("item", item);
 
                 mContext.startActivity(intent);
             }
