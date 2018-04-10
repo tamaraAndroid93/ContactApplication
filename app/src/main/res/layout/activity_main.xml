@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
         <android.support.v7.widget.RecyclerView
             android:focusable="true"
             android:id="@+id/recyclerviewContacts"
