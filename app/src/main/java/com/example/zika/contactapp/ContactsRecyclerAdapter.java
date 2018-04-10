@@ -33,7 +33,11 @@ public class ContactsRecyclerAdapter extends RecyclerView.Adapter<ContactsRecycl
 
     @Override
     public void onBindViewHolder(final ContactViewHolder holder, final int position) {
+<<<<<<< HEAD
         final ContactPeople item = mList.get(position);
+=======
+        ContactPeople item = mList.get(position);
+>>>>>>> 4d67c28b87b0fb90ea6246404056f9f19731e2eb
         holder.txtDisplay.setText(item.name);
         holder.txtDisplay.setContentDescription(item.name);
 
