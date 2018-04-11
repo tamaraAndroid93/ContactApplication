@@ -1,18 +1,16 @@
 package com.example.zika.contactapp;
 
-import java.io.Serializable;
-
+import java.io.Serializable;// implementira se Parcelable - nadji sto je bolji parcelable i kako se koristi, update code kada se uradi.
 public class ContactPeople implements Serializable {
 
-    public String name, phone, photoURI;
-
+   public String name, phone, photoURI;//private
 
     public ContactPeople(){
-
+// ne treba space, zasto si stavio prazan konstruktor? :)
     }
 
     public ContactPeople(String name, String phone, String photoURI){
-
+// ne treba space
         this.phone = phone;
         this.name = name;
         this.photoURI = photoURI;
