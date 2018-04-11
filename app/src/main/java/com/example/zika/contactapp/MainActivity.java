@@ -59,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
             //add contacts to arraylis non duplicates and move it to adapter
             mList.addAll(tempSet);
-
+            
+            // sortiraj u provideru ovde samo prikazes listu koja ti treba
+            // izvuci ga kao novu metodu
             if (mList.size() > 0) {
                 Collections.sort(mList, new Comparator<ContactPeople>() {
                     @Override
@@ -87,12 +89,17 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(this, R.string.permission_not_granted, Toast.LENGTH_SHORT).show();
+                // SnackBar probaj lepsi je
             }
         }
     }
+    
+    // Ovo je trebalo da se izdvoji u provider clasu. 
+    // Nikada podatke ne ucitavamo na View komponenti. Pogledaj MVP, MVC and MVVM
+    // ovo da bude Set
 
     private List<ContactPeople> getContactsDisplay() {
-
+// ovo nek bude set
         List<ContactPeople> contacts = new ArrayList<>();
         ContentResolver resolver = getContentResolver();
 
@@ -101,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = resolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
         // Check if cursor is NULL. If TRUE - Move the cursor to first.
         if (cursor != null && cursor.moveToFirst()) {
-
+         //   Log.ed(NESTO)
             do {
                 ContactPeople item = new ContactPeople();
 
@@ -115,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
             cursor.close();
         }
+        
+        // ubaci compare
+        //   return new ArrayList<ContactPeople>(contacts);
         return contacts;
     }
 
