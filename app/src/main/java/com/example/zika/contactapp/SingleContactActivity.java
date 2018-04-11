@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+//FRAGMENT
 public class SingleContactActivity extends AppCompatActivity {
     private ImageView mPhoto;
     private TextView mName;
@@ -22,15 +23,16 @@ public class SingleContactActivity extends AppCompatActivity {
         Intent intent = getIntent();
         item = (ContactPeople) intent.getSerializableExtra("item");
 
-
         initComponent();
         loadData(item);
     }
 
     private void loadData(ContactPeople item) {
+        // metoda private void loadPicture() {
         Picasso.with(getApplicationContext())
                 .load(item.photoURI)
                 .into(mPhoto);
+    }
 
         mPhone.setText(item.phone);
         mName.setText(item.name);
