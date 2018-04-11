@@ -8,7 +8,7 @@ public class ContactPeople implements Serializable {
 
 
     public ContactPeople(){
-
+// sta ce ti prazan konstruktor? :D
     }
 
     public ContactPeople(String name, String phone, String photoURI){
